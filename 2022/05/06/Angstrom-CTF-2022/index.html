@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/pikachu.jpg">
 <meta property="og:image" content="https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/console.png">
 <meta property="article:published_time" content="2022-05-06T05:02:52.000Z">
-<meta property="article:modified_time" content="2022-05-06T05:27:08.577Z">
+<meta property="article:modified_time" content="2022-05-06T05:37:10.330Z">
 <meta property="article:author" content="Wのﾑ刀ﾶ乇の11">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://woanmeo11.github.io/2022/05/06/Angstrom-CTF-2022/school_unblocker.png">
@@ -235,7 +235,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        res.locals.user = jwt.verify(req.cookies.token, jwtKey, &#123;</span><br><span class="line">            <span class="attr">algorithms</span>: [<span class="string">&quot;HS256&quot;</span>],</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">        <span class="keyword">if</span> (req.cookies.token) &#123;</span><br><span class="line">            res.clearCookie(<span class="string">&quot;token&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p>Mình chỉ cần lưu lại cookie sau khi <code>/register</code> rồi bấm <code>/delete</code>, sau đó gán lại cookie vào trình duyệt và đi tới <code>/vault</code> để có flag.  </p>
-<p>Tuy không cần dùng tới Race condition nhưng kỹ thuật này khá là hay và thường được sử dụng khi gặp các chall mà server có database,… shoặc vân vân và mây mây.</p>
+<p>Tuy không cần dùng tới Race condition nhưng kỹ thuật này khá là hay và thường được sử dụng khi gặp các chall mà server có database,… hoặc vân vân và mây mây.</p>
 
   </div>
 </article>
